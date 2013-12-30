@@ -1,0 +1,55 @@
+<!<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Bid</title>
+<link href="{{STATIC_URL|default:"/static/"}}css/bootstrap.css" rel="stylesheet">
+<link href="{{STATIC_URL|default:"/static/"}}css/bootstrap-responsive.css" rel="stylesheet">
+<link href="{{STATIC_URL|default:"/static/"}}FooTable-2/css/footable.core.css" rel="stylesheet">
+<link href="{{STATIC_URL|default:"/static/"}}FooTable-2/css/footable.standalone.css" rel="stylesheet">
+
+</head>
+ 
+<body class="indexPage">
+
+<div class="navbar navbar-fixed-top">  
+  <div class="navbar-inner">  
+    <div class="container">  
+
+<ul class="nav">  
+  <li class="active">  
+    <a class="brand" href="#">Bid</a>  
+  </li>  
+  <li><a href="/home">All Items</a></li>  
+  <li><a href="/login">Register/Login</a></li>  
+  <li><a href="/your-bid/">Your Bid</a></li>  
+
+</ul>  
+    </div>  
+  </div>  
+</div>
+
+<div class="modal-body" style="margin-top: 50px;">
+<h4 id="welcome-msg"></h4>
+<table class="footable table" id="table2">
+	<thead>
+		<tr>
+			<th>Bid value</th>
+			<th>Name</th>
+			<th>Address</th>
+		</tr>
+	</thead>
+        <tbody> 
+        </tbody>  
+</div>
+
+<script src="{{STATIC_URL|default:"/static/"}}/js/jquery.js"></script>
+<script src="{{STATIC_URL|default:"/static/"}}/js/bootstrap-dropdown.js"></script>
+<script src="{{STATIC_URL|default:"/static/"}}/js/bootstrap-2.3.2.min.js"></script>
+<script src="{{STATIC_URL|default:"/static/"}}/js/jquery.form.js"></script>
+<script src="{{STATIC_URL|default:"/static/"}}/js/main.js"></script>
+<script src="{{STATIC_URL|default:"/static/"}}FooTable-2/js/footable.js"></script>
+<script src="{{STATIC_URL|default:"/static/"}}js/populate-bids.js"></script>
+
+</body>
+</html>
