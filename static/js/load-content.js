@@ -1,5 +1,4 @@
 $(document).ready(function() { 
-	console.log(document.cookie);
 	    $.ajax({
 		    url : 'http://restify.labs.hashedin.com/hashedinrecruitmentapp/recruitment?accessToken='+document.cookie,
             crossDomain : true,
@@ -12,7 +11,17 @@ $(document).ready(function() {
                 }
             },
 		    success : function(data) {
-		    	data
+		    	var datas = data.data;
+		    	var rrr = '';
+		    	for (var i=0;i < datas.length; i++ ){
+		    		rrr = rrr + "<tr><td><a href=/interviews/"+ datas[i]['id'] +">" + datas[i]['condidateName'] + "</a></td>";
+		    		rrr = rrr + "<td>" + datas[i]['interviewerEmailId'] + "</td>";
+		    		rrr = rrr + "<td>" + datas[i]['interviewTime'] + "</td>";
+		    		rrr = rrr + "<td>" + datas[i]['roundNumber'] + "</td>";
+		    		rrr = rrr + "<td>" + datas[i]['interviewStatus'] + "</td></tr>";
+		    	};
+		    	$('#table1').append(rrr);
+		    		
 		    }
 	    });
 
