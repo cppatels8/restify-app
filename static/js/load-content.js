@@ -1,4 +1,5 @@
 $(document).ready(function() { 
+	console.log(document.cookie);
 	    $.ajax({
 		    url : 'http://restify.labs.hashedin.com/hashedinrecruitmentapp/recruitment?accessToken='+document.cookie,
             crossDomain : true,
@@ -7,11 +8,11 @@ $(document).ready(function() {
             beforeSend: function( xhr ) {
                 if (document.cookie == "")
                 {
-                     $('#welcome-msg').append("Please login to view the items");
+                	window.location.href = "/home";
                 }
             },
 		    success : function(data) {
-		    	
+		    	data
 		    }
 	    });
 
