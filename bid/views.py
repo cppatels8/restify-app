@@ -16,7 +16,28 @@ def admin(request):
 
 @csrf_exempt
 def viewInterviewDetail(request, interview_id):
-    return render(request, 'interview_detail.html')
+    data = [
+    {
+      "band": 7,
+      "condidateEmailId": "chandan.patel@hashedin.com",
+      "condidateName": "Prateek Kumar",
+      "contactNumber": "8948383994",
+      "createdAt": "2013-12-30T13:03:43",
+      "feedback": "Not Added",
+      "id": "52c16f2f9334a766c8ecc1c0",
+      "interviewFeedbackUri": "Url",
+      "interviewStatus": "open",
+      "interviewTime": "2014-01-02 13:00",
+      "interviewType": "Telephonic",
+      "interviewerEmailId": "bittu.kumar@hashedin.com",
+      "modifiedAt": "2013-12-30T13:03:43",
+      "owner": "52c16d479334a766c8ecc1bf",
+      "resource_uri": "",
+      "result": "No Updated",
+      "roundNumber": "1st"
+    }
+  ]
+    return render(request, 'interview_detail.html', {"interview": data})
 
 def your_bid(request):
     return render(request, 'your-bids.html')
