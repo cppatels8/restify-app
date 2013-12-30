@@ -9,8 +9,8 @@
 		<link href="{{STATIC_URL|default:"/static/"}}FooTable-2/css/footable.standalone.css" rel="stylesheet">
 	</head>
 	<body class="indexPage">
-		<div class="modal-body">
-			<h4 id="welcome-msg"></h4>
+		<div class="modal-body">			
+			<a href="#myModal" role="button" class="btn btn-small btn-warning pull-right" data-toggle="modal">Schedule Interview</a>
 			<table class="footable table" id="table1">
 				<thead>
 					<tr>
@@ -23,8 +23,41 @@
 				</thead>
 		        <tbody id="table1"> 
 		        </tbody> 
-		   	</table> 
+		   	</table>
 		</div>
+		
+ 
+<!-- Modal -->
+		<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		    <h3 id="myModalLabel">Interview Detail</h3>
+		  </div>
+		  <div class="modal-body">
+		    <label>Candidate Name</label>
+				<input type="text" name = "userName" id="candidateName" value="" class="input-xlarge">
+				<label>Candidate Email</label>
+				<input type="text" name = "password" id="candidateEmail" value="" class="input-xlarge">
+				<label>Round</label>
+				<input type="text" value="" id="round" name ="firstName" class="input-xlarge">
+				<label>Band</label>
+				<input type="text" value="" id="band" name ="firstName" class="input-xlarge">
+				<label>Contact Number</label>
+				<input type="text" value="" id="contactNumber" name ="firstName" class="input-xlarge">
+				<label>Interview Type</label>
+				<input type="text" value="" id="interviewType" name = "lastName" class="input-xlarge">
+				<label>Interview Time</label>
+				<input type="text" value="" id="interviewTime" name = "emailId" class="input-xlarge">
+				<label>Interviewer Email</label>
+				<input type="text" value="" id="interviewerEmail" name = "companyName" class="input-xlarge">
+			
+		  </div>
+		  <div class="modal-footer">
+		    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+		    <button class="btn btn-primary" id="scheduleInterview">Scheduled</button>
+		  </div>
+		</div>
+		
 		<script src="{{STATIC_URL|default:"/static/"}}/js/jquery.js"></script>
 		<script src="{{STATIC_URL|default:"/static/"}}/js/bootstrap-dropdown.js"></script>
 		<script src="{{STATIC_URL|default:"/static/"}}/js/bootstrap-2.3.2.min.js"></script>
