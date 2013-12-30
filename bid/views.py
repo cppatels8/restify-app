@@ -15,8 +15,8 @@ def admin(request):
     return render(request, 'admin.html')
 
 @csrf_exempt
-def award_bid(request):
-    return render(request, 'award-bid.html')
+def viewInterviewDetail(request, interview_id):
+    return render(request, 'interview_detail.html')
 
 def your_bid(request):
     return render(request, 'your-bids.html')

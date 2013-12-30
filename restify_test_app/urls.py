@@ -8,7 +8,7 @@ urlpatterns = patterns('',
     # Examples:
     (r'^login/$', 'bid.views.login_user'),
     (r'^home/$', 'bid.views.index'),
-    (r'^award-bid/$', 'bid.views.award_bid'),
+    (r'^interviews/(?P<interview_id>[\w]+)$', 'bid.views.viewInterviewDetail'),
     (r'^your-bid/$', 'bid.views.your_bid'),
 
     # url(r'^$', 'restify_test_app.views.home', name='home'),
