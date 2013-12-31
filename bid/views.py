@@ -11,14 +11,14 @@ def login_user(request):
 def index(request):
     accessToken = request.META.get('HTTP_COOKIE', None)
     url = "http://restify.labs.hashedin.com/hashedinrecruitmentapp/users/me?accessToken={0}".format(accessToken)
-    print "url", url
+    print url
     resp = requests.get(url=url)
     api_data = json.loads(resp.content)
     data = api_data['data']
     if data.get('isInterviewer', None):
-        return render(request, 'index.html')
-    else:
         return render(request, 'interviewer.html')
+    else:
+        return render(request, 'index.html')
         
 
 @csrf_exempt
