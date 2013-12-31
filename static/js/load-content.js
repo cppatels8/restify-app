@@ -77,7 +77,7 @@ $(document).ready(function() {
 	    			  "emailId": interviewerEmail,
 	    			  "firstName": interviewerFirstName,
 	    			  "lastName": interviewerLastName,
-	    			  "isInterviewer": true,
+	    			  "isInterviewer": 'true'
 	    			};
 	    	$.ajax({
                 url: 'http://restify.labs.hashedin.com/hashedinrecruitmentapp/users?accessToken='+ document.cookie, // php script to retern json encoded string
@@ -88,7 +88,8 @@ $(document).ready(function() {
                 async:false,
                 crossDomain : true,
                 origin: 'http://restify.labs.hashedin.com',
-                success: function(data) { // callback method for further manipulations             
+                success: function(data) { // callback method for further manipulations 
+                	console.log("successs");
                 	location.reload();
                 },
                 error: function(data) { // if error occured

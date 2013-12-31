@@ -1,117 +1,105 @@
 <!<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Bid</title>
-<link href="{{STATIC_URL|default:"/static/"}}css/bootstrap.css" rel="stylesheet">
-<link href="{{STATIC_URL|default:"/static/"}}css/bootstrap-responsive.css" rel="stylesheet">
-</head>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Bid</title>
+		<link href="{{STATIC_URL|default:"/static/"}}css/bootstrap.css" rel="stylesheet">
+		<link href="{{STATIC_URL|default:"/static/"}}css/bootstrap-responsive.css" rel="stylesheet">
+	</head>
  
-<body>
-
-<div class="navbar navbar-fixed-top">  
-  <div class="navbar-inner">  
-    <div class="container">  
-
-<ul class="nav">  
-  <li class="active">  
-    <a class="brand" href="#">Bid</a>  
-  </li>  
-  <li><a href="/home">All Items</a></li>  
-  <li><a href="/admin">Submit Items</a></li>
-  <li><a href="/award">Award Bid</a></li>
-  <li><a href="/login">Register/Login</a></li>
-</ul>  
-    </div>  
-  </div>  
-</div>
-<h3>Enter the  item details </h3>
-<div class="container">
-		<fieldset>
-			<legend>Condidate Interview Detail</legend>
-	    </fieldset>
-			
-			<table class="table">
-			    {% for item in interview %}
-			        <tr>
-			        <table class="table">
-			            <tr>
-			                <td>
-			                Condidate Name
-			                </td>
-			                <td>
-			                {{item.condidateName}}
-			                </td>
-			            </tr>
-			            <tr>
-			                <td>
-			                Email Id
-			                </td>
-			                <td>
-			                {{item.condidateEmailId}}
-			                </td>
-			            </tr>
-			            <tr>
-			                <td>
-			                Result
-			                </td>
-			                <td>
-			                {{item.result}}
-			                </td>
-			            </tr>
-			            <tr>
-			                <td>
-			                Status
-			                </td>
-			                <td>
-			                {{item.interviewStatus}}
-			                </td>
-			            </tr>
-			            <tr>
-			                <td>
-			                Feedback
-			                </td>
-			                <td>
-			                {{item.feedback}}
-			                </td>
-			            </tr>
-			            <tr>
-			                <td>
-			                Interview Time
-			                </td>
-			                <td>
-			                {{item.interviewTime}}
-			                </td>
-			            </tr>
-			            <tr>
-			                <td>
-			                Band
-			                </td>
-			                <td>
-			                {{item.band}}
-			                </td>
-			            </tr>
-			            
-			            <tr>
-			                <td>
-			                Interviewer
-			                </td>
-			                <td>
-			                {{item.interviewerEmailId}}
-			                </td>
-			            </tr>
-			            
-			        </table>
-			        </tr>
-			    {% endfor %}
-			</table>
-
-</div>
-<script src="{{STATIC_URL|default:"/static/"}}/js/jquery.js"></script>
-<script src="{{STATIC_URL|default:"/static/"}}/js/bootstrap-dropdown.js"></script>
-<script src="{{STATIC_URL|default:"/static/"}}/js/bootstrap-2.3.2.min.js"></script>
-<script src="{{STATIC_URL|default:"/static/"}}/js/jquery.form.js"></script>
-<script src="{{STATIC_URL|default:"/static/"}}/js/main.js"></script>
-
+	<body>
+	<div class="container">
+		<h3>Condidate Interview Detail</h3>
+		<table class="table">
+		    {% for item in interview %}
+		        <tr>
+		        <table class="table feedback_table">
+		            <tr>
+		                <td>
+		                Condidate Name
+		                </td>
+		                <td>
+		                {{item.condidateName}}
+		                </td>
+		            </tr>
+		            <tr>
+		                <td>
+		                Email Id
+		                </td>
+		                <td>
+		                {{item.condidateEmailId}}
+		                </td>
+		            </tr>
+		            <tr>
+		                <td>
+		                Round
+		                </td>
+		                <td>
+		                {{item.roundNumber}}
+		                </td>
+		            </tr>
+		            <tr>
+		                <td>
+		                Result
+		                </td>
+		                <td>
+		                <input type="text" id="result" value="{{item.result}}">
+		                </td>
+		            </tr>
+		            <tr>
+		                <td>
+		                Status
+		                </td>
+		                <td>
+		                <input type="text" id="status" value="{{item.interviewStatus}}">
+		                </td>
+		            </tr>
+		            <tr>
+		                <td>
+		                Feedback
+		                </td>
+		                <td>
+		                	<textarea rows="4" cols="50" id="feedbcak">
+								{{item.feedback}}
+							</textarea>
+		                </td>
+		            </tr>
+		            <tr>
+		                <td>
+		                Interview Time
+		                </td>
+		                <td>
+		                {{item.interviewTime}}
+		                </td>
+		            </tr>
+		            <tr>
+		                <td>
+		                Band
+		                </td>
+		                <td>
+		                {{item.band}}
+		                </td>
+		            </tr>
+		            
+		            <tr>
+		                <td>
+		                Interviewer
+		                </td>
+		                <td>
+		                {{item.interviewerEmailId}}
+		                </td>
+		            </tr>
+		            
+		        </table>
+		        </tr>
+		    {% endfor %}
+		</table>
+	</div>
+	<button class="btn btn-primary" style="margin-left:40%;" id="saveFeedback">Save</button>
+	<script src="{{STATIC_URL|default:"/static/"}}/js/jquery.js"></script>
+	<script src="{{STATIC_URL|default:"/static/"}}/js/bootstrap-dropdown.js"></script>
+	<script src="{{STATIC_URL|default:"/static/"}}/js/bootstrap-2.3.2.min.js"></script>
+	<script src="{{STATIC_URL|default:"/static/"}}/js/jquery.form.js"></script>
+	<script src="{{STATIC_URL|default:"/static/"}}/js/main.js"></script>
 </body>
 </html>
