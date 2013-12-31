@@ -9,7 +9,17 @@ def login_user(request):
 
 @csrf_exempt
 def index(request):
-    return render(request, 'index.html')
+    accessToken = request.META.get('HTTP_COOKIE', None)
+    url = "http://restify.labs.hashedin.com/hashedinrecruitmentapp/users/me?accessToken={0}".format(accessToken)
+    print "url", url
+    resp = requests.get(url=url)
+    api_data = json.loads(resp.content)
+    data = api_data['data']
+    if data.get('isInterviewer', None):
+        return render(request, 'index.html')
+    else:
+        return render(request, 'interviewer.html')
+        
 
 @csrf_exempt
 def admin(request):
