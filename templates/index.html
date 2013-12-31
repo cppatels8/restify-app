@@ -10,7 +10,9 @@
 	</head>
 	<body class="indexPage">
 		<div class="modal-body">			
-			<a href="#myModal" role="button" class="btn btn-small btn-warning pull-right" data-toggle="modal">Schedule Interview</a>
+			<a href="#registerInterviewerModel" role="button" class="btn btn-small btn-success pull-right" data-toggle="modal">Register Interviewer</a>
+
+			<a href="#myModal" role="button" class="btn btn-small btn-success pull-right" data-toggle="modal">Schedule Interview</a>
 			<table class="footable table" id="table1">
 				<thead>
 					<tr>
@@ -27,7 +29,7 @@
 		</div>
 		
  
-<!-- Modal -->
+<!-- Schedule an interview -->
 		<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		  <div class="modal-header">
 		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -50,13 +52,38 @@
 				<input type="text" value="" id="interviewTime" name = "emailId" class="input-xlarge">
 				<label>Interviewer Email</label>
 				<input type="text" value="" id="interviewerEmail" name = "companyName" class="input-xlarge">
-			
 		  </div>
 		  <div class="modal-footer">
 		    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
 		    <button class="btn btn-primary" id="scheduleInterview">Scheduled</button>
 		  </div>
 		</div>
+		
+<!-- Register an Interviewer -->
+<!-- Modal -->
+		<div id="registerInterviewerModel" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		    <h3 id="myModalLabel">Enter Interviewer Detail</h3>
+		  </div>
+		  <div class="modal-body register-body">
+		    <label>First Name</label>
+				<input type="text" name = "interviewerFirstName" id="interviewerFirstName" value="" class="input-xlarge">
+				<label>Last Name</label>
+				<input type="text" name = "interviewerLastName" id="interviewerLastName" value="" class="input-xlarge">
+				<label>Email Id</label>
+				<input type="text" name = "interviewerEmail" id="interviewerEmail" value="" class="input-xlarge">
+				<label>Username</label>
+				<input type="text" value="" id="interviewerUsername" name ="interviewerUsername" class="input-xlarge">
+				<label>Password</label>
+				<input type="text" value="" id="interviewerPassword" name ="interviewerPassword" class="input-xlarge">
+		  </div>
+		  <div class="modal-footer">
+		    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+		    <button class="btn btn-primary" id="registerInterviewer">Register</button>
+		  </div>
+		</div>
+		
 		
 		<script src="{{STATIC_URL|default:"/static/"}}/js/jquery.js"></script>
 		<script src="{{STATIC_URL|default:"/static/"}}/js/bootstrap-dropdown.js"></script>

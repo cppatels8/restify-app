@@ -61,12 +61,41 @@ $(document).ready(function() {
                 	alert("Some error ocured. try again later.");
                 }
               });
-	    
-	    	
-	    	
-	    	
-	    	
 	    });
 
+
+
+	$('#registerInterviewer').click(function(){
+	    	var	interviewerFirstName = $('.register-body').find("#interviewerFirstName").val(),
+	    	interviewerLastName = $('.register-body').find("#interviewerLastName").val();
+	    	interviewerPassword = $('.register-body').find("#interviewerPassword").val();
+	    	interviewerUsername = $('.register-body').find("#interviewerUsername").val();
+	    	interviewerEmail = $('.register-body').find("#interviewerEmail").val();
+	    	interviewerData =  {
+	    			  "userName": interviewerUsername,
+	    			  "password": interviewerPassword,
+	    			  "emailId": interviewerEmail,
+	    			  "firstName": interviewerFirstName,
+	    			  "lastName": interviewerLastName,
+	    			  "isInterviewer": true,
+	    			};
+	    	$.ajax({
+                url: 'http://restify.labs.hashedin.com/hashedinrecruitmentapp/users?accessToken='+ document.cookie, // php script to retern json encoded string
+                data: JSON.stringify(interviewerData),  // serialized data to send on server
+                dataType: 'json', // set recieving type - JSON in case of a question
+                contentType: 'application/json',
+                type:'POST', // set sending HTTP Request type
+                async:false,
+                crossDomain : true,
+                origin: 'http://restify.labs.hashedin.com',
+                success: function(data) { // callback method for further manipulations             
+                	location.reload();
+                },
+                error: function(data) { // if error occured
+                	alert("Some error ocured. try again later.");
+                }
+              });
+	    });
+	
     });
 
