@@ -24,6 +24,9 @@ def viewInterviewDetail(request, interview_id):
     data = api_data['data']
     return render(request, 'interview_detail.html', {"interview": [data]})
 
+def viewInterviewerDashboard(request):
+    return render(request, 'interviewer.html')
+
 def your_bid(request):
     return render(request, 'your-bids.html')
 
